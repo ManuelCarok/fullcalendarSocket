@@ -1,0 +1,113 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="./assets/bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/fullcalendar-3.9.0/fullcalendar.min.css">
+    <link rel="stylesheet" media="print" href="./assets/fullcalendar-3.9.0/fullcalendar.print.min.css">
+    <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin-top: 40px;
+        }
+
+        #calendar {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="calendar" class="fc fc-ltr fc-bootstrap3"></div>
+    </div>
+
+    <script src="./assets/moment-2.22.2/moment-with-locales.min.js"></script>
+    <script src="./assets/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="./assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="./assets/fullcalendar-3.9.0/fullcalendar.min.js"></script>
+    <script src="./assets/fullcalendar-3.9.0/locale-all.js"></script>
+    <script src="./assets/socket.io-2.0.3/socket.io-2.0.3.js"></script>
+    <script src="./js/calendar.js"></script>
+</body>
+
+</html>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" data-backdrop="static">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Agregar Evento</h5>
+            </div>
+            <form id="formAdd">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="texto">Evento: </label>
+                        <input type="text" class="form-control" placeholder="Texto" name="evento" id="evento">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <!-- Validar busqueda en la base de datos  -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModalEvent" data-backdrop="static">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Evento</h5>
+            </div>
+            <form id="formEvent">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="texto">Evento: </label>
+                        <input type="text" class="form-control" placeholder="Texto" name="evento" id="txtEventoMod">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
+                    <button type="submit" class="btn btn-primary">Modificar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <!-- Validar busqueda en la base de datos  -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModalDelete" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Eliminar Evento</h5>
+            </div>
+            <div class="modal-body">
+                ¿Seguro desea eliminar?
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger" id="btnEliminarConfimar">Aceptar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <!-- Validar busqueda en la base de datos  -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->

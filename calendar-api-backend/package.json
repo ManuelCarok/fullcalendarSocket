@@ -1,0 +1,27 @@
+{
+  "name": "calendar-api",
+  "version": "1.0.0",
+  "description": "API para recuperar datos para fullcalendar",
+  "main": "main.js",
+  "scripts": {
+    "test": "test main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManuelCarok/fullcalendarSocket.git"
+  },
+  "keywords": [
+    "API",
+    "NodeJS",
+    "MySQL",
+    "Express"
+  ],
+  "author": "Manuel Caroca",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  }
+}
